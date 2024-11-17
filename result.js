@@ -1,4 +1,3 @@
-
 if (BX.Vue) {
     BX.ready(function () {
         BX.Vue.mutateComponent('BXmakerAuthuserphoneEnterRegForm', {
@@ -7,13 +6,13 @@ if (BX.Vue) {
                 return {
                     userType: '',
                     userTypeOptions: [
-                        {id: 'FL', name: 'Розничный покупатель'},
-                        {id: 'UL', name: 'Оптовый покупатель'},
+                        {id: 17, name: 'Розничный покупатель'},
+                        {id: 16, name: 'Оптовый покупатель'},
                     ],
                 };
             },
             created() {
-                this.$set(this.$root.expandData, 'userType', 'FL');
+                this.$set(this.$root.expandData, 'userType', 17);
             },
             methods: {
                 onChangeUserType(value) {
@@ -38,27 +37,37 @@ if (BX.Vue) {
                    </div>
                       
 
-                     <slot name="login" v-if="$root.isEnabledRegisterFIO">                   
+					<slot name="last_name" v-if="$root.isEnabledRegisterLastName">                   
                         <BXmakerAuthuserphoneInput 
-                            :title="$root.localize.BXMAKER_AUTHUSERPHONE_ENTER_REG_FORM_FIO" 
-                            :value="$root.fio" 
-                            @onInput="$root.setFIO" 
-                            @onEnter="onEnterFIO"   
-                            name="FIO" 
-                            ref="fio"
+                            :title="$root.localize.BXMAKER_AUTHUSERPHONE_ENTER_REG_FORM_LAST_NAME" 
+                            :value="$root.lastname" 
+                            @onInput="$root.setLastName" 
+                            @onEnter="onEnterLastName"   
+                            name="LastNAME" 
+                            ref="lastname"
+                        />
+                    </slot> 
+					<slot name="first_name" v-if="$root.isEnabledRegisterFirstName">                   
+                        <BXmakerAuthuserphoneInput 
+                            :title="$root.localize.BXMAKER_AUTHUSERPHONE_ENTER_REG_FORM_FIRST_NAME" 
+                            :value="$root.firstname" 
+                            @onInput="$root.setFirstName" 
+                            @onEnter="onEnterFirstName"   
+                            name="FIRSTNAME" 
+                            ref="firstname"
+                        />
+                    </slot> 
+					<slot name="location" v-if="$root.isEnabledRegisterLocation">                   
+                        <BXmakerAuthuserphoneInput 
+                            :title="$root.localize.BXMAKER_AUTHUSERPHONE_ENTER_REG_FORM_LOCATION" 
+                            :value="$root.location" 
+                            @onInput="$root.setLocation" 
+                            @onEnter="onEnterLocation"   
+                            name="LOCATION" 
+                            ref="location"
                         />
 
-                    <slot name="surname" v-if="$root.isEnabledRegisterSurname">                   
-                        <BXmakerAuthuserphoneInput 
-                            :title="$root.localize.BXMAKER_AUTHUSERPHONE_ENTER_REG_FORM_SURNAME" 
-                            :value="$root.surname" 
-                            @onInput="$root.setSurname" 
-                            @onEnter="onEnterSurname"   
-                            name="Surname" 
-                            ref="surname"
-                        />
-                    </slot>            
-                                      
+
                     <slot name="phone">        
                     
                       <BXmakerAuthuserphoneInputPhone  v-if="$root.isEnabledPhoneMask"
