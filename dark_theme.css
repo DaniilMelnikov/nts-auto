@@ -1,62 +1,89 @@
-.bxmaker-authuserphone-input:hover .bxmaker-authuserphone-input__field, .bxmaker-authuserphone-input--focus .bxmaker-authuserphone-input__field, .bxmaker-authuserphone-input--hover .bxmaker-authuserphone-input__field {
-	border-color: #ad2323;
+/* цвет названия формы */
+div.bxmaker-authuserphone-header.bxmaker-authuserphone-enter-reg__title,
+div.bxmaker-authuserphone-header.bxmaker-authuserphone-enter-auth__title {
+	color: var(--white_text_black);
 }
-.bxmaker-authuserphone-input-location:hover .bxmaker-authuserphone-input-location__field, .bxmaker-authuserphone-input-location--focus .bxmaker-authuserphone-input-location__field, .bxmaker-authuserphone-input-location--hover .bxmaker-authuserphone-input-location__field {
-	border-color: #ad2323;
+
+/* Цвет текста в полях формы */
+.bxmaker-authuserphone-input__title, 
+#user-type-select > option, select,
+.bxmaker-authuserphone-input-location__title,
+.bxmaker-authuserphone-input-password__title,
+.bxmaker-authuserphone-input-phone__title {
+	color: var(--basic_text_black);
 }
-.bxmaker-authuserphone-input-phone:hover .bxmaker-authuserphone-input-phone__field, .bxmaker-authuserphone-input-phone--focus .bxmaker-authuserphone-input-phone__field, .bxmaker-authuserphone-input-phone--hover .bxmaker-authuserphone-input-phone__field {
-	border-color: #ad2323;
+
+/* Цвет фона формы */
+div.bxmaker-authuserphone-enter{
+    background-color: white;
+    background-color: var(--black_bg_black);
 }
+
+/*Цвета полей*/
+div.bxmaker-authuserphone-input__field,
+.bxmaker-authuserphone-input-phone__field,
+.bxmaker-authuserphone-input-location .bxmaker-authuserphone-input-location__field,
+.bxmaker-authuserphone-input-password .bxmaker-authuserphone-input-password__field
+{
+	background-color: var(--input_bg_color-hover);
+	border: 1px solid var(--input_border_color);
+}
+
+.bxmaker-authuserphone-input:hover .bxmaker-authuserphone-input__field, .bxmaker-authuserphone-input--focus .bxmaker-authuserphone-input__field,
+.bxmaker-authuserphone-input-location:hover .bxmaker-authuserphone-input-location__field, .bxmaker-authuserphone-input-location--focus .bxmaker-authuserphone-input-location__field,
+.bxmaker-authuserphone-input-password:hover .bxmaker-authuserphone-input-password__field, .bxmaker-authuserphone-input-password--focus .bxmaker-authuserphone-input-password__field,
+.bxmaker-authuserphone-input--focus .bxmaker-authuserphone-input__field,
+.bxmaker-authuserphone-input-phone:hover .bxmaker-authuserphone-input-phone__field, .bxmaker-authuserphone-input-phone--focus .bxmaker-authuserphone-input-phone__field
+{
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .015) inset;
+    border-color: #999;
+    background-color: var(--input_bg_color-focus);
+    border-color: var(--input_border_color-focus);
+}
+
+
+/* Цвет input */
+.bxmaker-authuserphone-input-phone__input input[type=text],
+.bxmaker-authuserphone-input input[type=otp],
+.bxmaker-authuserphone-input input[type=phone],
+.bxmaker-authuserphone-input input[type=password],
+.bxmaker-authuserphone-input input[type=text],
+.bxmaker-authuserphone-input input[type=tel],
+.bxmaker-authuserphone-input input[type=email],
+.bxmaker-authuserphone-input-password input[type=password],
+.bxmaker-authuserphone-input-password input[type=text],
+.bxmaker-authuserphone-input-location input[type=text] 
+{
+	color: var(--input_color);
+}
+
+/*Цвета кнопок и текст-ссылок*/
 .bxmaker-authuserphone-button__inner {
-	background-color: #ad2323;
+	background-color: var(--theme-base-color);
+    border-color: var(--theme-base-color);
+    color: #fff;
 }
+
 .bxmaker-authuserphone-button:hover .bxmaker-authuserphone-button__inner {
-	background-color: #8a1c1c;
+    background-color: hsl(0, 66%,calc(41% + 6%));
+    border-color: hsl(0, 66%,calc(41% + 6%));
 }
 
 a.bxmaker-authuserphone-link, a.bxmaker-authuserphone-link:visited {
-    color: #000000;
+	color: var(--white_text_black);
 }
 a.bxmaker-authuserphone-link:hover, a.bxmaker-authuserphone-link:active {
-    color: #ad2323;
+	color: #ad2323;
+	text-decoration: none;
 }
-@media (prefers-color-scheme: dark) {
-	.bxmaker-authuserphone-enter-smscode__phone {
-    	color: #bb1b1b;
-	}
-	.bxmaker-authuserphone-enter-smscode__notice{
-		color: white;
-	}
-	.bxmaker-authuserphone-header{
-		color: white;
-	}
-	.bxmaker-authuserphone-enter {
-		background-color: #1b1b1b;
-	}
 
-    .bxmaker-authuserphone-input input[type=otp], .bxmaker-authuserphone-input input[type=phone], .bxmaker-authuserphone-input input[type=password], .bxmaker-authuserphone-input input[type=text], .bxmaker-authuserphone-input input[type=tel], .bxmaker-authuserphone-input input[type=email], .bxmaker-authuserphone-input-location input[type=text], .bxmaker-authuserphone-input-phone input[type=text], .bxmaker-authuserphone-input-phone__field {
-        background-color: #1b1b1b;
-		color: white;
-    }
 
-    .bxmaker-authuserphone-input__title, .bxmaker-authuserphone-input-phone__title, .bxmaker-authuserphone-enter-auth__title, .bxmaker-authuserphone-enter-reg__title, .bxmaker-authuserphone-input-location__title, .bxmaker-authuserphone-input-phone--flag.bxmaker-authuserphone-input-phone input[type=text] {
-        color: white;
-    }
-
-	a.bxmaker-authuserphone-link, a.bxmaker-authuserphone-link:visited {
-    color: white;
-	}
-	a.bxmaker-authuserphone-link:hover, a.bxmaker-authuserphone-link:active {
-		color: #ad2323;
-	}
-	.bxmaker-authuserphone-input__field {
-		background-color: #1b1b1b;
-	}
-	div.bxmaker-authuserphone-input.bxmaker-authuserphone-input--custom-select > div > select {
-		color: white;
-    	background-color: #1b1b1b;
-	}
+/* Изменение цвета глаза на пароле */
+.theme-dark .bxmaker-authuserphone-input-password__visible:after {
+    filter: invert(100%) sepia(59%) saturate(0%) hue-rotate(30deg) brightness(101%) contrast(102%);
 }
+
+
 
 div.bxmaker-authuserphone-input.bxmaker-authuserphone-input--custom-select {
 	height: 53.2px;
@@ -64,6 +91,7 @@ div.bxmaker-authuserphone-input.bxmaker-authuserphone-input--custom-select {
 
 div.bxmaker-authuserphone-input.bxmaker-authuserphone-input--custom-select > div > select {
 	width: 100%;
+	border-color: transparent;
 }
 
 #bxmaker-authuserphone-enter__uB8qD7 {

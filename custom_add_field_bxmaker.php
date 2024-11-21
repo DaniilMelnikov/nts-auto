@@ -36,7 +36,7 @@ if (\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
 }
 
 
-
+<div class="bxmaker-authuserphone-input-location "><div class="bxmaker-authuserphone-input-location__field"><div class="bxmaker-authuserphone-input-location__input"><input type="text" name="LOCATION" autocomplete="new-password" placeholder=""> <span class="bxmaker-authuserphone-input-location__title">Город</span></div></div> <div class="bxmaker-authuserphone-input-location__popup"><div class="bxmaker-authuserphone-empty">ничего не найдено</div> </div></div>
 
 
 ?>

@@ -1,0 +1,110 @@
+<script>
+    function create(htmlStr) {
+        var frag = document.createDocumentFragment(),
+            temp = document.createElement('div');
+        temp.innerHTML = htmlStr;
+        while (temp.firstChild) {
+            frag.appendChild(temp.firstChild);
+        }
+        return frag;
+    }
+    
+    function changeFormCustom(mod="start") {
+        let authForm = document.querySelector(".bxmaker-authuserphone-enter-auth");
+        let regForm = document.querySelector(".bxmaker-authuserphone-enter-reg");
+        let pleaseReg = document.querySelector(".please-register");
+        if(mod=="start"){
+            authForm.style = "display: none;";
+            pleaseReg.style = "display: none;";
+            regForm.style = "";
+            let buttomAuth = document.querySelector("div.bxmaker-authuserphone-enter-reg__toauth > a");
+            buttomAuth.onclick = function() {
+                changeFormCustom("end")
+            };
+        } else {
+            authForm.style = "";
+            pleaseReg.style = "";
+            regForm.style = "display: none;";
+        }
+    }
+    
+    setInterval(function(){
+        let regForm = document.querySelector(".bxmaker-authuserphone-enter-reg");
+        let pleaseReg = document.querySelector(".please-register");
+        if(regForm.style.display) {
+            pleaseReg.style = "";
+        } else {
+            pleaseReg.style = "display: none;";
+        }
+    }, 500);
+    
+    
+    function timeoutAuthForm(){
+            var fragment = create(`
+                <div class="please-register">
+                    <div class="please-flex-column" style="max-width: 35px;">
+                        <img src="/local/templates/aspro-lite_custom/images/icon-danger.png" alt="Восклицательный знак">
+                    </div>
+                    <div class="please-flex-column" >
+                        <div class="please-register-text">
+                            Если вы оптовый покупатель и входите первый раз, пожалуйста, используйте эту
+                            <a href="#" class="bxmaker-authuserphone-link" onclick="changeFormCustom()"
+                            style="font-size: 12px;
+                            text-decoration: underline;
+                            color: #ad2323 !important;">форму регистрации.</a>
+                        </div>
+                        <div class="please-register-text" style="text-decoration: underline;">
+                            Наш менеджер свяжется с вами по условиям сотрудничества
+                        </div>
+                    </div>
+                    <style>
+                        @media (prefers-color-scheme: dark) {
+                            .please-register{
+                                background-color: #fafafa;
+                                color: black;
+                            }
+                        }
+                        .please-register{
+                            display: flex;
+                            background-color: var(--input_bg_color-hover);
+                            color: var(--white_text_black);
+                            border-radius: 5px;
+                            font-size: 12px;
+                            margin-top: 25px;
+                            padding: 12px 11px;
+                            gap: 9px;
+                        }
+                        .please-flex-column > img{
+                            width: 25px;
+                        }
+                        .please-register-text{
+                            line-height: 16px;
+                            margin-bottom: 10px;
+                        }
+                    
+                    </style>
+                </div>
+    
+                `);
+    
+                let authSelector = document.querySelector("#bxmaker-authuserphone-enter__uB8qD7");
+                authSelector.insertAdjacentHTML('beforeend', fragment.firstElementChild.outerHTML);
+    
+                let inputStar = document.querySelectorAll(".bxmaker-authuserphone-input__title");
+                fragmentStar = create(`
+                        <span style="color: #be1719;"> *</span>
+                    `); 
+                for (i = 0; i<inputStar.length; i++ ){
+                    inputStar[i].insertAdjacentHTML('beforeend', fragmentStar.firstElementChild.outerHTML);
+                }
+    
+                inputStar = document.querySelector('.bxmaker-authuserphone-input-location__title');
+                inputStar.insertAdjacentHTML('beforeend', fragmentStar.firstElementChild.outerHTML);
+    
+                inputStar = document.querySelector('div.bxmaker-authuserphone-enter-reg > div.bxmaker-authuserphone-enter-reg-form > div.bxmaker-authuserphone-input-password > div > span.bxmaker-authuserphone-input-password__title');
+                inputStar.insertAdjacentHTML('beforeend', fragmentStar.firstElementChild.outerHTML);
+    }
+    
+    
+    setTimeout(timeoutAuthForm, 100);
+</script>
